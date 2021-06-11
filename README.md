@@ -9,6 +9,10 @@ This script will do login brute force in Facebook with a list of passwords.
 4. Cookies and the headers will change every 4-5 attempts.
 
 
+# Screenshots
+![](https://lh3.googleusercontent.com/-wYLsAuDg02A/YMPqpL31oOI/AAAAAAAAGsw/RlHmqvrRz3Y2EyhS5GYmb8lBOVC-9CLVgCNcBGAsYHQ/s0/Screenshot%2B2021-06-12%2B003031.png)
+![](https://lh3.googleusercontent.com/-yRZABBgyQfk/YMPqpBx3ukI/AAAAAAAAGss/w0mby0CfNMYkf1o-6UIdKNsKXVQO5liTACNcBGAsYHQ/s0/Screenshot%2B2021-06-12%2B004907.png)
+
 # Installation
 First, you'll need to have:
 1. [Python 3](https://www.python.org/downloads/)
