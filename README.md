@@ -5,8 +5,10 @@ This script will do login brute force in Facebook with a list of passwords.
 # Features
 1. Easy to use.
 2. Easy code.
-3. Using the fastest host in Facebook.
-4. Cookies and the headers will change every 4-5 attempts.
+3. Colored Texts.
+4. Using the fastest host in Facebook.
+5. Cookies and headers will change every 4-5 attempts.
+6. A random proxy every attempt.
 
 
 # Screenshots
@@ -30,7 +32,12 @@ Once that's all set up:
 ```bash
 python app.py -u <USERNAME/ID/EMAIL/PHONE> -p <PASSWORD_LIST_FILENAME> -l <LOG_FILE_NAME>
 ```
-to get the help message:
+- To use a single password:
+```bash
+python app.py -u <USERNAME/ID/EMAIL/PHONE> -sp <PASSWORD> -l <LOG_FILE_NAME>
+```
+-> You can ignore the `-l` (log) argument.
+- To get the help message:
 ```bash
 python app.py -h
 ```
